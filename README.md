@@ -1,1 +1,7 @@
-# pixi-card-demo
+## Installation instructions
+
+# Yarn install
+
+# Yarn start
+
+Enjoy!
