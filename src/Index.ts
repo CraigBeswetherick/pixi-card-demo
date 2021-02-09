@@ -9,6 +9,12 @@ import { Engine } from "./Engine/Engine";
 import { SimpleFadeTransition } from "./Transition/Transition";
 import * as Constants from "./Utils/Constants";
 
+import Stats from "stats.js";
+
+const stats = new Stats();
+stats.showPanel(0);
+document.body.appendChild(stats.dom);
+
 const app = new PIXI.Application({
   antialias: true,
   width: window.innerWidth,
@@ -52,7 +58,9 @@ const setup = () => {
   ]);
 
   app.ticker.add((delta) => {
+    stats.begin();
     engine.update(delta);
+    stats.end();
   });
 };
 
